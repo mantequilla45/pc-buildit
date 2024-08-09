@@ -54,6 +54,7 @@ function Header() {
                         alt="Buildit Logo" 
                     />
                 </div>
+                <NavigationBanner />
             </div>
         
         </div>
@@ -63,4 +64,56 @@ function Header() {
   );
 }
 
+
+function NavigationBanner () {
+  return (
+    <div className = "navigation-banner">
+      <div className = "navigation-items">
+        <img 
+          className = "navigation-icon"
+          loading = "lazy" 
+          src = "https://cdn.builder.io/api/v1/image/assets/TEMP/83e513bcb1dfe358fe48ba34d2c95cba162fab12b79919a4a2971ce94a8aae86?apiKey=0cd5b3eb85e74a83a268d41d07a9c27f&&apiKey=0cd5b3eb85e74a83a268d41d07a9c27f"
+          alt = "Home icon"
+        />
+        <h2 className = "navigation-text">Home</h2>
+      </div>
+      <div className = "navigation-items">
+        <img 
+          className = "navigation-icon"
+          loading = "lazy" 
+          src = "https://cdn.builder.io/api/v1/image/assets/TEMP/73f6c1b2480695813badd0ac2ec0af1df593869eefa895e9459f64cd4f939a9e?apiKey=0cd5b3eb85e74a83a268d41d07a9c27f&&apiKey=0cd5b3eb85e74a83a268d41d07a9c27f"
+          alt = "Build icon"
+        />
+        <h2 className = "navigation-text">Build</h2>
+      </div>
+      <div className = "navigation-items">
+        <img 
+          className = "navigation-icon"
+          loading = "lazy" 
+          src = "https://cdn.builder.io/api/v1/image/assets/TEMP/dc1beb850ee3bd27de312829fb29f61852cd91faa601a168480c54e0cddad13d?apiKey=0cd5b3eb85e74a83a268d41d07a9c27f&&apiKey=0cd5b3eb85e74a83a268d41d07a9c27f"
+          alt = "Components icon"
+        />
+        <h2 className = "navigation-text">Components</h2>
+      </div>
+      <div className = "navigation-items">
+        <img 
+          className = "navigation-icon"
+          loading = "lazy" 
+          src = "https://cdn.builder.io/api/v1/image/assets/TEMP/9440ab9b7920c9567341542057de5f999364a827dc4754b9cf406b7d555a981e?apiKey=0cd5b3eb85e74a83a268d41d07a9c27f&&apiKey=0cd5b3eb85e74a83a268d41d07a9c27f"
+          alt = "Computers icon"
+        />
+        <h2 className = "navigation-text">Computers</h2>
+      </div>
+      <div className = "navigation-items">
+        <img 
+          className = "navigation-icon"
+          loading = "lazy" 
+          src = "https://cdn.builder.io/api/v1/image/assets/TEMP/32471bfed74fdd70d7c0982a2d65138ad1c2a263aa8c1b0648e7af71a9df505d?apiKey=0cd5b3eb85e74a83a268d41d07a9c27f&&apiKey=0cd5b3eb85e74a83a268d41d07a9c27f"
+          alt = "Guides icon"
+        />
+        <h2 className = "navigation-text">Guides</h2>
+      </div>
+    </div>
+  );
+}
 export default Header;
