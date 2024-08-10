@@ -33,17 +33,19 @@ function Build() {
     );
 
     return (
-        <div className="build-page">
+        <div className="build">
             <div className="build-content">
                 <div className="build-components">
                     {components.map(renderComponent)}
                 </div>
                 <div className="build-screen">
-                    {activeComponent && (
-                        <div>
-                            <p>{activeComponent}</p>
-                        </div>
-                    )}
+                    <div className = "build-screen-header">
+                        {activeComponent && (
+                            <div>
+                                <div className = "build-title">{activeComponent}</div>
+                            </div>
+                        )}
+                    </div>
                 </div>
                 
                 <div className="build-components">

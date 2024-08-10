@@ -27,7 +27,7 @@ function Header() {
           alt="Menu Icon"
           onClick={toggleBanner}
         />
-        <a href="/">
+        <a className = "logo-align" href="/">
           <img
             className="logo"
             loading="lazy"

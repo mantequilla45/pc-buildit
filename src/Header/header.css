@@ -1,107 +1,114 @@
 .header {
-    background-color: #4f1787;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    height: 56px;
-    padding: 0px 25px 0px 10px;
-    position: relative;
+  background-color: #4f1787;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 56px;
+  padding: 0px 25px 0px 10px;
+  position: relative;
+  flex-wrap: nowrap;
+}
+
+.header.build-page {
+  background-color: #131842;
+}
+
+.logo-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 100%;
+  gap: 5px;
+}
+
+.logo {
+  object-fit: contain;
+  width: 130px;
+  cursor: pointer;
+}
+  
+.hamburger-menu {
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.hamburger-menu:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+  
+.user-wrapper {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 20px 25px;
+  white-space: nowrap;
+  justify-content: start;
+  margin: auto 0;
+}
+
+.user-login, .user-register {
+  align-self: stretch;
+  margin: auto 0;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font: 400 16px Open Sans, sans-serif;
+  color: #ffffff;
+}
+
+.user-header-divider {
+  background-color: #ffffff;
+  align-self: stretch;
+  width: 1px;
+  height: 25px;
+  margin: auto 0;
+}
+.logo-align {
+  display: flex;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .header {
+    max-width: 100%;
+    padding: 0px 10px;
     flex-wrap: nowrap;
   }
-
-  .header.build-page {
-    background-color: #131842;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    height: 56px;
-    padding: 0px 25px 0px 10px;
-    position: relative;
-    flex-wrap: nowrap;
-  }
-
   .logo-container {
-    display: flex;
     width: 100%;
-    align-items: center;
-    height: 100%;
-    gap: 5px;
-  }
-
-  .logo {
-    object-fit: contain;
-    width: 130px;
-    cursor: pointer;
-  }
-  
-  .hamburger-menu {
-    width: 20px;
-    height: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s, border 0.3s;
-    padding: 15px;
-    border-radius: 15px;
-  }
-  
-  .hamburger-menu:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  .user-wrapper {
-    align-self: stretch;
     display: flex;
-    align-items: center;
-    gap: 20px 25px;
-    white-space: nowrap;
-    justify-content: start;
-    margin: auto 0;
-  }
 
+  }
+  .user-wrapper {
+    white-space: initial;
+    margin-right: 10px;
+  }
+  .logo {
+  width: 100px;
+  }
+  .banner-header {
+    padding: 0px;
+  }
+  .hamburger-menu {
+    width: 18px;
+    height: 12px;
+  }
   .user-login, .user-register {
-    align-self: stretch;
-    margin: auto 0;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    font: 400 16px Open Sans, sans-serif;
-    color: #ffffff;
+    font-size: 13px;
   }
-  
+}
+
+@media (max-width: 500px) {
+
   .user-header-divider {
-    background-color: #ffffff;
-    align-self: stretch;
-    width: 1px;
-    height: 25px;
-    margin: auto 0;
+      display: none;
   }
-  
-
-  @media (max-width: 991px) {
-    .header {
-      max-width: 100%;
-      padding: 0px 20px;
-      flex-wrap: nowrap;
-    }
-    .logo-container {
-        width: 100%;
-    }
-    .user-wrapper {
-        white-space: initial;
-    }
-
-    .banner-header {
-      padding: 0px 20px;
-    }
+  .user-register {
+      display: none
   }
-
-  @media (max-width: 500px) {
-
-    .user-header-divider {
-        display: none;
-    }
-    .user-register {
-        display: none
-    }
-  }
+}
