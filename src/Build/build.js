@@ -1,9 +1,11 @@
 import './build.css';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 function Build() {
 
     const [activeComponent, setActiveComponent] = useState('');
+    const [barPosition, setBarPosition] = useState(0);
+    const componentRefs = useRef({});
 
     const components = [
         { name: 'Your PC', icon: 'https://cdn.builder.io/api/v1/image/assets/TEMP/f8d5e81b00cc2c54ac789ed1efa798341577daf6a4323a0b2e47345611e07e7a?placeholderIfAbsent=true&apiKey=0cd5b3eb85e74a83a268d41d07a9c27f' },
@@ -23,21 +25,38 @@ function Build() {
 
     const handleClick = (componentName) => {
         setActiveComponent(componentName);
+        const component = componentRefs.current[componentName];
+        if (component) {
+            setBarPosition(component.offsetTop - component.parentNode.offsetTop);
+        }
     };
 
     const renderComponent = ({ name, icon }) => (
-        <div className="component" key={name} onClick={() => handleClick(name)}>
-            <img className="component-icon" src={icon} alt={`${name} icon`} />
-            <h2 className="component-name">{name}</h2>
+        <div
+            className="component"
+            key={name}
+            ref={(el) => (componentRefs.current[name] = el)}
+            onClick={() => handleClick(name)}
+        >
+            <div className="component-container">
+                <img className="component-icon" src={icon} alt={`${name} icon`} />
+                <h2 className="component-name">{name}</h2>
+            </div>
         </div>
     );
 
     return (
         <div className="build">
             <div className="build-content">
-                <div className="build-components">
-                    {components.map(renderComponent)}
+                <div className="bar-container">
+                    <div className="build-bar" style={{ top: barPosition }}></div>
                 </div>
+                <div className="build-components">
+                    <div className="menu-container">
+                        {components.map(renderComponent)}
+                    </div>
+                </div>
+                
                 <div className="build-screen">
                     <div className = "build-screen-header">
                         {activeComponent && (

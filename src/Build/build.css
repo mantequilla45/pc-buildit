@@ -8,11 +8,12 @@
 .build-screen {
     background-color: #FBF6E2;
     width: 70%;
-    border-radius: 25px 25px 0px 0px;
+    border-radius: 25px;
     display: flex;
     overflow-y: auto;
     flex-grow: 2;
     padding: 50px;
+    height: 80%;
 }
 
 .build-title {
@@ -22,7 +23,6 @@
 .build-screen-header {
     display: flex;
 }
-
 
 .build-content {
     margin-top: 50px;
@@ -39,15 +39,6 @@
     flex-grow: 1;
 }
 
-.component {
-    display: flex;
-    padding: 0px 50px;
-    gap: 20px;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
 .component:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -62,25 +53,70 @@
     color: #ffffff;
 }
 
+.component {
+    display: flex;
+    gap: 20px;
+    padding: 0px 25px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 0px 10px 10px 0px;
+    overflow: visible; 
+}
 
-@media screen and (max-width: 900px) {
-    .build-components{
-        margin: 0px;
+.component-container {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+    overflow: visible; 
+}
+
+.bar-container {
+    position: relative; /* Change from absolute to relative */
+    margin: 50px;
+    height: 100%; /* Ensure it has height to contain the bar */
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.build-bar {
+    width: 5px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    flex-shrink: 0; /* Prevent shrinking */
+    transition: top 0.3s ease; /* Smooth transition */
+}
+
+@media (max-width: 900px) {
+    .build-components {
+        margin: 20px 0px;
         width: 5%;
-        gap: 10px;
         display: flex;
-        align-items: center;
-        margin: 20px 10px;
-    }
-    .build-content {
-        margin-top: 10px;
-    }
-    .component {
-        padding: 5px;
         flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .build-content {
+        margin-top: 20px;
+    }
+
+    .component {
+        display: flex;
+        flex-direction: row;
         align-items: center;
         width: 25px;
         border-radius: 5px;
+        gap: 0px;
+        justify-content: space-evenly;
+        margin-left: 0px;
+        padding: 7px;
+        height: 25px;
     }
 
     .build-screen {
@@ -94,13 +130,37 @@
 
     .component-icon {
         width: 25px;
+        height: 25px;
+        border-radius: 5px;
     }
-    
+
     .build-title {
         font: 500 15px Open Sans, sans-serif;
     }
 
     .build-screen-header {
         display: flex;
+    }
+
+    .component-container {
+        display: flex;
+        margin-left: 0px;
+    }
+    
+    .build-bar {
+        width: 3px;
+        height: 25px;
+        display: flex;
+    }
+
+    .bar-container {
+        margin: 27px 0px;
+        margin-left: 3px;
+    }
+    
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 }
