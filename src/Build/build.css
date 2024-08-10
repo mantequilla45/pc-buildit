@@ -1,0 +1,56 @@
+.build-page {
+    background-color: #4F1787;
+    display: flex;
+    justify-content: center;
+    height: 100vh;  
+}
+
+.build-screen {
+    background-color: #FBF6E2;
+    width: 70%;
+    border-radius: 25px 25px 0px 0px;
+    display: flex;  
+    overflow-y: auto;
+}
+
+.build-content {
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+}
+
+.build-components {
+    display: flex;
+    width: 15%;
+    margin: 50px;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 100vh;
+}
+
+.component {
+    display: flex;
+    padding: 0px 50px;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.component:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.component-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.component-name {
+    font: 400 15px Open Sans, sans-serif;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+    
+}

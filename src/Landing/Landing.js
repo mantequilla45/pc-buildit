@@ -1,12 +1,11 @@
 import React from 'react';
 import './Landing.css';
 import { Helmet } from 'react-helmet';
-import Header from './header';
+import Header from '../Header/header';
 
 function Landing() {
   return (
     <div>
-      <Header/> 
       <Helmet>
         <title>PC Buildit</title>
       </Helmet>
